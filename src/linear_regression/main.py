@@ -21,3 +21,12 @@ class LinearRegression:
                 weights_gradient = features * error
                 self.bias = self.bias - (bias_gradient * self.learning_rate)
                 self.weights = self.weights - (weights_gradient * self.learning_rate)
+        return self
+
+    def fit_normal(self, training_data, target_values):
+        bias_column = np.ones(training_data.shape(0))
+        updated_train = np.concatenate((np.expand_dims(bias_column, axis=1), training_data), axis=1)
+        theta = np.linalg.inv(updated_train.T @ updated_train) @ updated_train.T @ target_values
+        self.bias = theta[0]
+        self.weights = theta[1:]
+        return self
