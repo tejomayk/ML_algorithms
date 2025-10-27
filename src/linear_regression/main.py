@@ -6,3 +6,6 @@ class LinearRegression:
         self.epochs = epochs
         self.weights = None #This will be initialized as an array of zeros inside the fit method based on the input data dimensions
         self.bias = 0
+
+    def predict(self, input_data: np.array):
+        output_value = np.dot(input_data, self.weights) + self.bias
