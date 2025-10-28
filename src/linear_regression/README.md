@@ -9,3 +9,7 @@
 - MSE isn't applicable right now because we are using SGD where we only consider one sample per step
 - `np.expand_dims` is the numpy equivalent of `torch.unsqueeze`
 - returning `self` at the end of the `fit` and `fit_normal` methods makes it similar to sklearn
+
+28th October 2025
+- Fixed a small, silly error in the `fit_normal` method where I was calling a tuple instead of indexing it. Surprised that Gemini didn't catch it.
+- Added a sanity-check demo notebook to test the methods in the `LinearRegression` class.
