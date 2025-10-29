@@ -13,3 +13,4 @@
 28th October 2025
 - Fixed a small, silly error in the `fit_normal` method where I was calling a tuple instead of indexing it. Surprised that Gemini didn't catch it.
 - Added a sanity-check demo notebook to test the methods in the `LinearRegression` class.
+- Implemented L2 regularization. I feel like the code is becoming quite messy, and the way I handled the `l2_term` in `fit_normal` doesn't seem elegant. Maybe the next step is to improve the readability of the code.
